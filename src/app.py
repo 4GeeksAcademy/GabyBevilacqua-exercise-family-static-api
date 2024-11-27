@@ -6,7 +6,6 @@ from flask import Flask, request, jsonify, url_for
 from flask_cors import CORS
 from utils import APIException, generate_sitemap
 from datastructures import FamilyStructure
-#from models import Person
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -47,7 +46,6 @@ def add_member():
     request_body = request.get_json()
     #get the new family member data and store in the family list
     jackson_family.add_member(request_body)
-
     return "Family member added succesfully", 200
 
 @app.route('/member/<int:member_id>', methods=['DELETE'])
